@@ -11,7 +11,7 @@ class MyPluginInit {
 
 	public function __construct() {
 		// It is important that we init the Enqueue class right at the plugin/theme load time
-		$this->enqueue = new \WPackio\Enqueue( 'wpack', 'dist', '1.0.0', 'theme', __FILE__ );
+		$this->enqueue = new \WPackio\Enqueue( 'wpack', 'assets', '1.0.0', 'theme', __FILE__ );
 		// Enqueue a few of our entry points
 		add_action( 'wp_enqueue_scripts', [ $this, 'scripts_enqueue' ] );
 	}

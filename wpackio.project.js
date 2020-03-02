@@ -54,7 +54,7 @@ module.exports = {
 	],
 	// Output path relative to the context directory
 	// We need relative path here, else, we can not map to publicPath
-	outputPath: 'dist',
+	outputPath: 'assets',
 	// Project specific config
 	// Needs react(jsx)?
 	hasReact: false,
