@@ -14,6 +14,7 @@
     "archive": "wpackio-scripts pack"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "@wpackio/entrypoint": "^4.3.0",
     "dotenv": "^8.2.0",
     "normalize.css": "^8.0.1"
