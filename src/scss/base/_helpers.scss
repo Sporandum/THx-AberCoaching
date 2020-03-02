@@ -3,7 +3,18 @@
   padding: 0 16px;
   margin: 0 auto;
 
-  &> .container {
+  &>.container {
     padding: 0;
   }
+
+  &--y-center {
+    display: flex;
+    align-items: center;
+    min-height: inherit;
+    height: inherit;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
 }
