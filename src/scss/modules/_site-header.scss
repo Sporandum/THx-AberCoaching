@@ -1,0 +1,15 @@
+.site-header {
+  height: 6rem;
+  @include box-shadow;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__brand-logo {
+    width: 322px;
+  
+  }
+}
