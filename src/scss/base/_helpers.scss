@@ -6,12 +6,20 @@
   &>.container {
     padding: 0;
   }
+}
 
-  &--y-center {
-    display: flex;
+.d-flex {
+  display: flex;
+  min-height: inherit;
+  height: inherit;
+
+
+  &--align-center {
     align-items: center;
-    min-height: inherit;
-    height: inherit;
+  }
+
+  &--justify-center {
+    justify-content: center;
   }
 }
 
