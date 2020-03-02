@@ -7,10 +7,10 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body class="<?php body_class(); ?>">
 	<?php wp_body_open(); ?>
 	<div class="site-header">
-			<div class="container site-header__wrapper">
+			<div class="container container--y-center">
 
 				<div class="site-header__brand-logo">
 					<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">
