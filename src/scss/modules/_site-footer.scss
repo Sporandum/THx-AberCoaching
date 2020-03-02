@@ -1,0 +1,54 @@
+.site-footer {
+  font-size: 1.125rem;
+  font-weight: 300;
+  margin-top: auto;
+
+  &__brand-logo {
+    width: 322px;
+  }
+
+  &__row {
+    min-height: 6rem;
+  }
+
+  &__row--higher {
+    min-height: 8rem;
+  }
+
+  &__row--bg-color {
+    background: $color__primary;
+    color: $color__white--pale;
+  }
+
+  &__row--border-top {
+    border-top: 1px solid $color__grey;
+  }
+
+  &__social-icons {
+    display: flex;
+    margin-left: auto;
+  }
+
+  &__social-icon svg {
+    font-size: 3rem;
+    color: $color__primary;
+    margin-left: 2rem;
+
+    &:hover,
+    &:active {
+      color: $color__primary--hover;
+    }
+  }
+
+  &__bottom-link {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 1rem;
+    }
+  }
+
+}
