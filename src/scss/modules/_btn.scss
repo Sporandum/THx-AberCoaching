@@ -1,0 +1,13 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  width: fit-content;
+  padding: 1.125rem;
+  margin: 1rem;
+
+  &--primary {
+    background-color: $color__primary;
+    color: $color__white--pale;
+  }
+
+}

@@ -1,17 +1,13 @@
 {
-  "runtime.js": "js/runtime-dad56239.js",
-  "runtime.js.map": "js/runtime-dad56239.js.map",
-  "scripts.js": "js/scripts-8c13fb6a.js",
-  "scripts.js.map": "js/scripts-8c13fb6a.js.map",
+  "runtime.js": "js/runtime.js",
+  "scripts.js": "js/scripts.js",
+  "vendors~scripts.js": "js/vendors~scripts.js",
   "wpackioEp": {
     "scripts": {
       "js": [
-        "js/runtime-dad56239.js",
-        "js/scripts-8c13fb6a.js"
-      ],
-      "js.map": [
-        "js/runtime-dad56239.js.map",
-        "js/scripts-8c13fb6a.js.map"
+        "js/runtime.js",
+        "js/vendors~scripts.js",
+        "js/scripts.js"
       ]
     }
   }

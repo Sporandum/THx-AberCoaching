@@ -1,29 +1,17 @@
 {
-  "runtime.js": "css/runtime-e189268d.js",
-  "runtime.js.map": "css/runtime-e189268d.js.map",
-  "styles.css": "css/styles-8413f374.css",
-  "styles.css.map": "css/styles-8413f374.css.map",
-  "styles.js": "css/styles-e0dcbede.js",
-  "styles.js.map": "css/styles-e0dcbede.js.map",
-  "vendors~styles.js": "css/vendors~styles-5e7bc66b.js",
-  "vendors~styles.js.map": "css/vendors~styles-5e7bc66b.js.map",
+  "runtime.js": "css/runtime.js",
+  "styles.css": "css/styles.css",
+  "styles.js": "css/styles.js",
+  "vendors~styles.js": "css/vendors~styles.js",
   "wpackioEp": {
     "styles": {
       "js": [
-        "css/runtime-e189268d.js",
-        "css/vendors~styles-5e7bc66b.js",
-        "css/styles-e0dcbede.js"
-      ],
-      "js.map": [
-        "css/runtime-e189268d.js.map",
-        "css/vendors~styles-5e7bc66b.js.map",
-        "css/styles-e0dcbede.js.map"
+        "css/runtime.js",
+        "css/vendors~styles.js",
+        "css/styles.js"
       ],
       "css": [
-        "css/styles-8413f374.css"
-      ],
-      "css.map": [
-        "css/styles-8413f374.css.map"
+        "css/styles.css"
       ]
     }
   }

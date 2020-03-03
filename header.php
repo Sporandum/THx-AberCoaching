@@ -10,7 +10,7 @@
 <body class="<?php body_class(); ?>">
 	<?php wp_body_open(); ?>
 	<div class="site-header">
-			<div class="container d-flex d-flex--align-center">
+			<div class="container d-flex d-flex--align-center inherit-height">
 
 				<div class="site-header__brand-logo">
 					<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">

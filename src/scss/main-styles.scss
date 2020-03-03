@@ -7,9 +7,14 @@
 
 // BASE and HELPERS
 @import 'base/baseline';
+@import 'base/layouts';
 @import 'base/helpers';
 
 // BEM Blocks
 @import 'modules/site-header';
 @import 'modules/primary-nav';
 @import 'modules/site-footer';
+@import 'modules/headline';
+@import 'modules/btn';
+@import 'modules/generic-content';
+@import 'modules/page-section';
