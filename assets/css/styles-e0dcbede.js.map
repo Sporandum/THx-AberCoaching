@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/scss/main-styles.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;oKAAA,yB","file":"css/styles-e0dcbede.js","sourcesContent":["// Font Awesome\r\nimport '@fortawesome/fontawesome-free/js/fontawesome'\r\nimport '@fortawesome/fontawesome-free/js/brands'\r\n\r\n// Styles\r\nimport './main-styles.scss'\r\n"],"sourceRoot":""}
