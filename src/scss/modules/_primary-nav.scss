@@ -1,16 +1,24 @@
 .primary-nav {
 
-  margin-left: auto;
-
   ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
+
+    @include breakpoint($lg) {
+      flex-direction: row;
+      align-items: initial;
+    }
   }
 
   li {
-    margin-left: 2rem;
+    padding: 0.75rem 0;
+    @include breakpoint($lg) {
+      margin-left: 2rem;
+    }
   }
 
   a {

@@ -9,19 +9,27 @@
 
 <body class="<?php body_class(); ?>">
 	<?php wp_body_open(); ?>
-	<div class="site-header">
-			<div class="container d-flex d-flex--align-center inherit-height">
-
-				<div class="site-header__brand-logo">
-					<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">
+	<header class="site-header">
+		<div class="site-header__wrapper">
+			<div class="site-header__logo">
+				<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">
+			</div>
+			<div id="site-header__menu-icon" class="site-header__menu-icon">
+				<div id="burger-icon" class="burger-icon">
+					<div></div>
+					<div></div>
+					<div></div>
 				</div>
+			</div>
+			<div id="site-header__menu-content" class="site-header__menu-content">
 				<nav class="primary-nav">
 					<ul>
-						<li><a class="current-item" href="#">Présentation</a></li>
+						<li><a href="#">Présentation</a></li>
 						<li><a href="#">Services</a></li>
 						<li><a href="#">Blog</a></li>
 						<li><a href="#">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
-	</div>
+		</div>
+	</header>

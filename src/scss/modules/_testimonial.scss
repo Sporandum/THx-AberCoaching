@@ -1,0 +1,116 @@
+.testimonials {
+
+    position: relative;
+    max-width: 981px;
+    margin: $margin-Y__section auto;
+    overflow: hidden;
+    padding-bottom: 1rem;
+
+    @include breakpoint($md) {
+      margin: $margin-Y__section--md auto;
+    }
+
+    @include breakpoint($lg) {
+      margin: $margin-Y__section--lg auto;
+    }
+
+  &__controls {
+    display: none;
+    font-size: 2rem;
+  }
+
+  @include breakpoint($md) {
+    padding: 0 4rem 1rem 4rem;
+
+    &__controls {
+      display: block;
+      font-size: 2rem;
+      color: $color__primary;
+    }
+
+    &__control {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%) scaleY(1.2);
+
+      &--left {
+        left: -2.5rem;
+      }
+
+      &--right {
+        right: -2.5rem;
+      }
+    }
+  }
+}
+
+.testimonial {
+
+  display: grid;
+  margin: 0 auto;
+  grid-template:
+    "avatar title"
+    "avatar author"
+    "text text"/ 4rem 1fr;
+  column-gap: 0.5rem;
+
+
+  &__text {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 1rem;
+  }
+
+  &__avatar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  &__title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    @include rfs(28px);
+    font-weight: 400;
+  }
+
+  &__author {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+
+
+  @include breakpoint($md) {
+    grid-template:
+      "avatar title"minmax(2rem, auto) "avatar text"
+      "avatar author";
+    column-gap: 2rem;
+    max-width: 768px;
+
+
+    &__avatar {
+      grid-row: 1 / -1;
+      justify-self: center;
+      align-self: center;
+    }
+
+    &__title {
+
+      @include rfs(28px);
+      grid-area: title;
+    }
+
+    &__text {
+      grid-row: 2 / 3;
+      grid-column: 2 / -1;
+      font-size: 1.0625rem;
+    }
+
+    &__author {
+      grid-area: author;
+    }
+  }
+}
+
+

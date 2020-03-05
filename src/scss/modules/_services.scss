@@ -1,0 +1,101 @@
+.services {
+
+  &__bg-color {
+    background: $color__grey;
+    padding: $margin-Y__section 0;
+  }
+
+  @include breakpoint($md) {
+    padding: $margin-Y__section--md 0;
+  }
+
+  @include breakpoint($lg) {
+    padding: $margin-Y__section--lg 0;
+  }
+
+  &__container {
+    display: grid;
+    row-gap: 3rem;
+
+    @include breakpoint($lg) {
+      row-gap: 6rem;
+    }
+  }
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "label"
+    "image"
+    "text";
+
+  &__label {
+    grid-area: label;
+    text-align: center;
+  }
+
+  &__img-bloc {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-height: 150px;
+    }
+  }
+
+  &__text-bloc {
+    grid-area: text;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+
+    &__label {
+      text-align: left;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &__img-bloc {
+      grid-column: 1;
+      grid-row: 1 / -1;
+
+      img {
+        max-height: 280px;
+      }
+    }
+
+    &__text-bloc {
+      grid-column: 2;
+      grid-row: 2 / 3;
+      max-width: unset;
+    }
+  }
+}
+
+// Reverse layout of even
+.services__container .service:nth-child(even) {
+
+  @include breakpoint($md) {
+
+    .service__label {
+      text-align: left;
+      grid-column: 1 / 2;
+    }
+
+    .service__img-bloc {
+      grid-column: 2 / -1;
+    }
+
+    .service__text-bloc {
+      grid-column: 1 / 2;
+    }
+  }
+}

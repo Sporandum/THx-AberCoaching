@@ -1,4 +1,7 @@
-// Box sizing Fix
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500&display=swap');
+
+// BOX SIZING FIX
 * {
   box-sizing: border-box;
 }
@@ -8,10 +11,7 @@
   box-sizing: inherit;
 }
 
-// FONTS
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500&display=swap');
-
-// Baseline
+// GLOBAL
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -22,21 +22,16 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  overflow-x: hidden;
   
   &.admin-bar {
     min-height: calc(100vh - 32px);
-    
   }
-
 }
 
 img {
   max-width: 100%;
   height: auto;
-
-  &.img-shadow {
-    @include box-shadow($x: 4px, $y: 4px, $b: 12px)
-  }
 }
 
 a {

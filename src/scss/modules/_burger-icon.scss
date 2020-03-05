@@ -1,0 +1,41 @@
+.burger-icon {
+  height: 2rem;
+  width: 2rem;
+
+  div {
+    position: absolute;
+    height: 2px;
+    width: 2rem;
+    background-color: $color__black;
+    transition: all 0.3s ease-out;
+  }
+
+  div:nth-child(1) {
+    top: 0.5rem;
+    transform-origin: 25%;
+  }
+
+  div:nth-child(2) {
+    top: 1rem;
+    transform-origin: left;
+  }
+  
+  div:nth-child(3) {
+    top: 1.5rem;
+    transform-origin: 25%;
+  }
+
+  &--close-x {
+
+    div:nth-child(1) {
+      transform: rotate(45deg) scaleX(1.35) translate(0, -1px);
+    }
+    div:nth-child(2) {
+      transform: scaleX(0);
+    }
+
+    div:nth-child(3) {
+      transform: rotate(-45deg) scaleX(1.35) translate(1px, -1px);
+    }
+  }
+}
