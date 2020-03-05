@@ -2,8 +2,9 @@
 
   &__bg-color {
     background: $color__grey;
-    padding: $margin-Y__section 0;
   }
+  
+  padding: $margin-Y__section 0;
 
   @include breakpoint($md) {
     padding: $margin-Y__section--md 0;
