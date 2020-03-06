@@ -35,25 +35,15 @@
 
 			<div class="banner">
 				<div class="banner__container">
+
+				<?php foreach($gallery as $image) : ?>
 					<div class="banner__image">
-						<img src="<?php echo get_theme_file_uri('/assets/images/teamwork-makes-the-dream-work.jpg'); ?>" alt="">
+
+						<img src="<?php echo esc_url($image['sizes']['gallery']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
 
 					</div>
-					<div class="banner__image">
-						<img src="<?php echo get_theme_file_uri('/assets/images/vladimir-proskurovskiy-TNJdsXC_wtY-unsplash.jpg'); ?>" alt="">
-
-					</div>
-					<div class="banner__image">
-						<img src="<?php echo get_theme_file_uri('/assets/images/15861.jpg'); ?>" alt="">
-
-					</div>
-					<div class="banner__image">
-						<img src="<?php echo get_theme_file_uri('/assets/images/black-and-white-blackboard-business-chalkboard-356043.jpg'); ?>" alt="">
-
-					</div>
-					<div class="banner__image">
-						<img src="<?php echo get_theme_file_uri('/assets/images/group-of-people-standing-infront-of-blackboard-3184432.jpg'); ?>" alt="">
-					</div>
+				<?php endforeach; ?>
+					
 				</div>
 			</div><!-- end .banner -->
 
