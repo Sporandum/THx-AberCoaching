@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_5e61ff48e8813",
@@ -138,6 +138,144 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5e623b6035e2f",
+            "label": "Home Page About",
+            "name": "home_page_about",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_5e623fc9912a8",
+                    "label": "About Title",
+                    "name": "about_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25
+                },
+                {
+                    "key": "field_5e62437d13fa3",
+                    "label": "About Name",
+                    "name": "about_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25
+                },
+                {
+                    "key": "field_5e623fe0912a9",
+                    "label": "About Excerpt",
+                    "name": "about_excerpt",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 12,
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_5e624b75f942a",
+                    "label": "About Picture",
+                    "name": "about_picture",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5e6241d1c4536",
+                    "label": "About Button Title",
+                    "name": "about_btn",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 50
+                },
+                {
+                    "key": "field_5e624003912aa",
+                    "label": "About Page Link",
+                    "name": "about_page",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 1,
+                    "allow_archives": 0,
+                    "multiple": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -154,10 +292,8 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583488877
+    "modified": 1583500848
 }

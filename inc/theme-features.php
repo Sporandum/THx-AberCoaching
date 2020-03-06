@@ -1,12 +1,14 @@
 <?php
 
-// Disable Gutenberg
-add_filter( 'use_block_editor_for_post', '__return_false' );
 
-
-//
-
-
+// Hide editor on home
+add_action( 'admin_init', 'hide_editor' );
+function hide_editor() {
+     
+    if($_GET['post'] == 5){ 
+        remove_post_type_support('page', 'editor');
+    }
+}
 
 function abercoaching_theme_features() {
 

@@ -2,18 +2,21 @@
 
 <?php if (have_posts()) :
 	while (have_posts()) :
-		the_post(); 
-		
+		the_post();
+
 		$hero = (object) get_field('home_page_hero');
 		$gallery = get_field('home_page_gallery');
+		$about = (object) get_field('home_page_about');
+
+		var_dump($about);
+
 		$allowed_html = array(
 			'br' => array()
 		);
-		var_dump($hero);
-		var_dump($gallery);
-		
+	
 
-		?>
+
+?>
 
 		<main class="home">
 
@@ -32,37 +35,37 @@
 				</section><!-- end .hero -->
 			</div><!-- end .wrapper -->
 
+			<?php if ($gallery) : ?>
+				<div class="banner">
+					<div class="banner__container">
 
-			<div class="banner">
-				<div class="banner__container">
+						<?php foreach ($gallery as $image) : ?>
+							<div class="banner__image">
 
-				<?php foreach($gallery as $image) : ?>
-					<div class="banner__image">
+								<img src="<?php echo esc_url($image['sizes']['gallery']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
 
-						<img src="<?php echo esc_url($image['sizes']['gallery']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+							</div>
+						<?php endforeach; ?>
 
 					</div>
-				<?php endforeach; ?>
-					
-				</div>
-			</div><!-- end .banner -->
+				</div><!-- end .banner -->
+			<?php endif; ?>
 
-
-			<div class="wrapper">
-				<section class="about">
-					<h2 class="about__headline headline headline--section">Présentation</h2>
-					<div class="about__img-bloc">
-						<img src="<?php echo get_theme_file_uri('/assets/images/smiling-woman-wearing-black-sweater-1587009.jpg'); ?>" alt="">
-					</div>
-					<h3 class="about__name headline headline--medium">Anna SZREMETA</h3>
-					<div class="about__text-bloc generic-content">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates illum similique voluptatum illo dicta, quos vero incidunt delectus cum, quo vel temporibus nam, dolorem impedit!</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, est.</p>
-						<p>Eos molestias ex natus excepturi recusandae odio inventore minima quam.</p>
-					</div>
-					<a href="" class="about__btn btn btn--primary">En savoir plus</a>
-				</section><!-- end .about -->
-			</div><!-- end .wrapper -->
+			<?php if ($about) : ?>
+				<div class="wrapper">
+					<section class="about">
+						<h2 class="about__headline headline headline--section"><?php echo esc_html($about->about_title); ?></h2>
+						<div class="about__img-bloc">
+							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
+						</div>
+						<h3 class="about__name headline headline--medium"><?php  echo esc_html($about->about_name); ?></h3>
+						<div class="about__text-bloc generic-content">
+							<?php echo $about->about_excerpt; ?>
+						</div>
+						<a href="<?php echo esc_url($about->about_page); ?>" class="about__btn btn btn--primary"><?php echo esc_html($about->about_btn); ?></a>
+					</section><!-- end .about -->
+				</div><!-- end .wrapper -->
+			<?php endif; ?>
 
 			<div class="services__bg-color">
 				<div class="wrapper">
