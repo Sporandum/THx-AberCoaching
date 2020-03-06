@@ -3,11 +3,24 @@
   text-decoration: none;
   width: fit-content;
   padding: 1.125rem;
-  margin: 1rem;
+  font-size: 0.95rem;
+
+  @include breakpoint($md) {
+    font-size: 1.0625rem;
+  }
 
   &--primary {
     background-color: $color__primary;
     color: $color__white--pale;
   }
 
+  &--center {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &--right {
+    display: block;
+    margin-left: auto;
+  }
 }

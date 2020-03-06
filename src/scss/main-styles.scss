@@ -3,18 +3,35 @@
 @import 'base/mixins';
 
 // VENDORS
+@import '~breakpoint-sass';
+@import '~rfs/scss.scss';
 @import '~normalize.css';
+@import '~@glidejs/glide/src/assets/sass/glide.core';
+@import '~@glidejs/glide/src/assets/sass/glide.theme';
 
-// BASE and HELPERS
-@import 'base/baseline';
-@import 'base/layouts';
+// BASE
+@import 'base/global';
 @import 'base/helpers';
 
 // BEM Blocks
 @import 'modules/site-header';
+@import 'modules/burger-icon';
 @import 'modules/primary-nav';
+
 @import 'modules/site-footer';
+
 @import 'modules/headline';
 @import 'modules/btn';
 @import 'modules/generic-content';
-@import 'modules/page-section';
+
+@import 'modules/hero';
+@import 'modules/banner';
+@import 'modules/about';
+@import 'modules/services';
+@import 'modules/testimonial';
+@import 'modules/glide';
+@import 'modules/last-posts';
+
+
+
+

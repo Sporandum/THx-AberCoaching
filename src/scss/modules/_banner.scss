@@ -1,0 +1,17 @@
+.banner {
+
+  &__container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    background: $color__primary;
+    padding: 1rem 0;
+  }
+
+  &__image {
+    max-width: 100%;
+    min-width: 300px;
+    margin: 0 0.5rem;
+  }
+
+}
