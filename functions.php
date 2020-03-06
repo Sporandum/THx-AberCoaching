@@ -27,3 +27,8 @@ class MyPluginInit {
 
 // Init
 new MyPluginInit();
+
+
+// Disable Gutenberg
+add_filter( 'use_block_editor_for_post', '__return_false' );
+

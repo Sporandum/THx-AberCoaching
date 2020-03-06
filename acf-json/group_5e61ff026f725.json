@@ -1,0 +1,163 @@
+{
+    "key": "group_5e61ff026f725",
+    "title": "Home Page",
+    "fields": [
+        {
+            "key": "field_5e61ff06e8812",
+            "label": "Home page Hero",
+            "name": "home_page_hero",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5e61ff48e8813",
+                    "label": "Hero Title",
+                    "name": "hero_title",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_5e61ffa1e8814",
+                    "label": "Hero text",
+                    "name": "hero_text",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 6,
+                    "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_5e61ffebe8815",
+                    "label": "Hero Button",
+                    "name": "hero_btn",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e62000ee8816",
+                            "label": "Hero Button - Title",
+                            "name": "hero_btn_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": 50
+                        },
+                        {
+                            "key": "field_5e620081e8817",
+                            "label": "Hero Button - Link",
+                            "name": "hero_btn_link",
+                            "type": "page_link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": "",
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "allow_archives": 1,
+                            "multiple": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_5e621cb7078c4",
+            "label": "Home Page Gallery",
+            "name": "home_page_gallery",
+            "type": "gallery",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": 5,
+            "max": 9,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1583488877
+}
