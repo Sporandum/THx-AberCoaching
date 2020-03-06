@@ -21,20 +21,3 @@ function hide_editor() {
 }
 
 
-// Custom post type Services
-function abercoaching_services_post_types() {
-	register_post_type('services', array(
-		'public' => true,
-		'menu_icon' => 'dashicons-format-aside',
-		'show_in_rest' => true, // For use block editor
-		'labels' => array(
-			'name' => 'Services',
-			'add_new_item' => 'Ajouter un service',
-			'edit_item' => 'Editer un service',
-			'all_items' => 'Services',
-			'singular_name' => 'Service'
-		)
-	));
-}
-
-add_action('init', 'abercoaching_services_post_types');
