@@ -7,15 +7,15 @@
 		$hero = (object) get_field('home_page_hero');
 		$gallery = get_field('home_page_gallery');
 		$about = (object) get_field('home_page_about');
-
-		var_dump($about);
+		$services = get_field('home_services');
+		$servicesID = [];
+		foreach ($services as $service) {
+			$servicesID[] = $service->ID;
+		}
 
 		$allowed_html = array(
 			'br' => array()
 		);
-	
-
-
 ?>
 
 		<main class="home">
@@ -58,7 +58,7 @@
 						<div class="about__img-bloc">
 							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
 						</div>
-						<h3 class="about__name headline headline--medium"><?php  echo esc_html($about->about_name); ?></h3>
+						<h3 class="about__name headline headline--medium"><?php echo esc_html($about->about_name); ?></h3>
 						<div class="about__text-bloc generic-content">
 							<?php echo $about->about_excerpt; ?>
 						</div>
@@ -67,62 +67,55 @@
 				</div><!-- end .wrapper -->
 			<?php endif; ?>
 
-			<div class="services__bg-color">
-				<div class="wrapper">
-					<section class="services">
 
-						<h2 class="headline headline--section">Services</h2>
+			<?php if ($services) : ?>
 
-						<div class="services__container">
+				<div class="services__bg-color">
+					<div class="wrapper">
+						<section class="services">
+							<h2 class="headline headline--section">Services</h2>
 
-							<div class="service">
+							<div class="services__container">
 
-								<div class="service__img-bloc">
-									<img src="<?php echo get_theme_file_uri('/assets/svg/undraw_stand_out_1oag.svg') ?>" alt="">
-								</div>
+								<?php $serviceQuery = new WP_Query(array(
+									'post_type' => 'services',
+									'order' => 'ASC',
+									'post__in' => $servicesID
+								));
 
-								<h3 class="service__label headline headline--medium">Coaching individuel</h3>
-								<div class="service__text-bloc generic-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere impedit accusamus dolorem modi excepturi illum unde voluptatibus inventore?</p>
-									<p>
-										<a href="" class="btn btn--primary btn--center">En savoir plus</a>
-									</p>
-								</div>
+								if ($serviceQuery->have_posts()) :
+									while ($serviceQuery->have_posts()) :
+										$serviceQuery->the_post();
 
-							</div><!-- end .service -->
+										$img;
+										$service = (object) get_field('home_description');
 
-							<div class="service">
-								<div class="service__img-bloc">
-									<img src="<?php echo get_theme_file_uri('/assets/svg/undraw_team_spirit_hrr4.svg') ?>" alt="">
-								</div>
+										if ($service->png) $img = $service->png;
+										if ($service->svg) $img = $service->svg; ?>
 
-								<h3 class="service__label headline headline--medium">Cercle de coaching</h3>
-								<div class="service__text-bloc generic-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere impedit accusamus dolorem modi excepturi illum unde voluptatibus inventore?</p>
-									<p>
-										<a href="" class="btn btn--primary btn--center">En savoir plus</a>
-									</p>
-								</div>
-							</div><!-- end .service -->
+										<div class="service">
 
-							<div class="service">
-								<div class="service__img-bloc">
-									<img src="<?php echo get_theme_file_uri('/assets/svg/undraw_conference_uo36.svg') ?>" alt="">
-								</div>
+											<div class="service__img-bloc">
+												<img src="<?php echo esc_url($img['sizes']['large']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+											</div>
 
-								<h3 class="service__label headline headline--medium">Formation</h3>
-								<div class="service__text-bloc generic-content">
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere impedit accusamus dolorem modi excepturi illum unde voluptatibus inventore?</p>
-									<p>
-										<a href="" class="btn btn--primary btn--center">En savoir plus</a>
-									</p>
-								</div><!-- end .service -->
+											<h3 class="service__label headline headline--medium"><?php the_title(); ?></h3>
+											<div class="service__text-bloc generic-content">
+												<p><?php echo wp_kses($service->excerpt, $allowed_html); ?></p>
+												<p>
+													<a href="<?php the_permalink(); ?>" class="btn btn--primary btn--center"><?php echo esc_html($service->button_title); ?></a>
+												</p>
+											</div>
 
+										</div><!-- end .service -->
+								<?php endwhile;
+								endif;  ?>
 							</div><!-- end .services__container -->
-						</div>
-					</section><!-- end .services -->
-				</div><!-- end .wrapper -->
-			</div><!-- end .services__bg-color -->
+						</section><!-- end .services -->
+					</div><!-- end .wrapper -->
+				</div><!-- end .services__bg-color -->
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
 
 			<div class="wrapper">
 				<section class="testimonials">

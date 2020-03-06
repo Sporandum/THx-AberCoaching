@@ -276,6 +276,28 @@
                     "multiple": 0
                 }
             ]
+        },
+        {
+            "key": "field_5e6255f4d6d6e",
+            "label": "Home Services",
+            "name": "home_services",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "services"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
         }
     ],
     "location": [
@@ -295,5 +317,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583500848
+    "modified": 1583503199
 }
