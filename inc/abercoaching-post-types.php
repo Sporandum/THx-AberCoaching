@@ -14,6 +14,19 @@ function abercoaching_post_types() {
 			'singular_name' => 'Service'
 		)
 	));
+
+	register_post_type('testimonials', array(
+		'public' => true,
+		'menu_icon' => 'dashicons-format-quote',
+		'supports' => array('title'),
+		'labels' => array(
+			'name' => 'Témoignages',
+			'add_new_item' => 'Ajouter un témoignage',
+			'edit_item' => 'Editer un témoignage',
+			'all_items' => 'Témoignages',
+			'singular_name' => 'Témoignage'
+		)
+	));
 }
 
 add_action('init', 'abercoaching_post_types');

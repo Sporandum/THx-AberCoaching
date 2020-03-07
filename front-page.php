@@ -9,8 +9,13 @@
 		$about = (object) get_field('home_page_about');
 		$services = get_field('home_services');
 		$servicesID = [];
-		foreach ($services as $service) {
+		foreach ($services['services_select'] as $service) {
 			$servicesID[] = $service->ID;
+		}
+		$testimonials = get_field('home_testimonials');
+		$testimonialsID = [];
+		foreach ($testimonials['testimonials_select'] as $testimonial) {
+			$testimonialsID[] = $testimonial->ID;
 		}
 
 		$allowed_html = array(
@@ -73,19 +78,21 @@
 				<div class="services__bg-color">
 					<div class="wrapper">
 						<section class="services">
-							<h2 class="headline headline--section">Services</h2>
+							<h2 class="headline headline--section"><?php echo esc_html($services['services_title']); ?></h2>
 
 							<div class="services__container">
 
 								<?php $serviceQuery = new WP_Query(array(
+									'posts_per_page' => -1,
 									'post_type' => 'services',
-									'order' => 'ASC',
-									'post__in' => $servicesID
-								));
+									'post__in' => $servicesID,
+									'orderby' => 'post__in'
 
+								));
 								if ($serviceQuery->have_posts()) :
 									while ($serviceQuery->have_posts()) :
 										$serviceQuery->the_post();
+
 
 										$img;
 										$service = (object) get_field('home_description');
@@ -117,63 +124,59 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 
-			<div class="wrapper">
-				<section class="testimonials">
-					<h2 class="headline headline--section">Témoignages</h2>
 
-					<div class="glide">
+			<?php $testimonialsQuery = new WP_Query(array(
+				'posts_per_page' => -1,
+				'post_type' => 'testimonials',
+				'post__in' => $testimonialsID,
+				'orderby' => 'post__in'
+			));
 
-						<div class="glid__track" data-glide-el="track">
-							<ul class="glide__slides">
-								<li class="glide__slide">
-									<div class="testimonial">
-										<div class="testimonial__avatar">
-											<img src="<?php echo get_theme_file_uri('/assets/images/Temoignage__avatar.png'); ?>" alt="">
-										</div>
-										<div class="testimonial__title">Création d'entreprise</div>
-										<div class="testimonial__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus provident eveniet id! Dignissimos, tempore dolorum!</div>
-										<div class="testimonial__author">Sophie</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="testimonial">
-										<div class="testimonial__avatar">
-											<img src="<?php echo get_theme_file_uri('/assets/images/Temoignage__avatar.png'); ?>" alt="">
-										</div>
-										<div class="testimonial__title">Création d'entreprise</div>
-										<div class="testimonial__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus provident eveniet id! Dignissimos, tempore dolorum!</div>
-										<div class="testimonial__author">Sophie</div>
-									</div>
-								</li>
-								<li class="glide__slide">
-									<div class="testimonial">
-										<div class="testimonial__avatar">
-											<img src="<?php echo get_theme_file_uri('/assets/images/Temoignage__avatar.png'); ?>" alt="">
-										</div>
-										<div class="testimonial__title">Création d'entreprise</div>
-										<div class="testimonial__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus provident eveniet id! Dignissimos, tempore dolorum!</div>
-										<div class="testimonial__author">Sophie</div>
-									</div>
-								</li>
+			if ($testimonialsQuery) : ?>
 
-							</ul>
-						</div>
-						<div data-glide-el="controls" class="testimonials__controls">
-							<span class="testimonials__control testimonials__control--left" role="button" data-glide-dir="<"><i class="fas fa-chevron-left"></i></span>
-							<span class="testimonials__control testimonials__control--right" role="button" data-glide-dir=">"><i class="fas fa-chevron-right"></i></span>
-						</div>
+				<div class="wrapper">
+					<section class="testimonials">
+						<h2 class="headline headline--section"><?php echo esc_html($testimonials['testimonials_title']); ?></h2>
 
-						<div class="glide__bullets" data-glide-el="controls[nav]">
-							<button class="glide__bullet" data-glide-dir="=0"></button>
-							<button class="glide__bullet" data-glide-dir="=1"></button>
-							<button class="glide__bullet" data-glide-dir="=2"></button>
-						</div>
+						<div class="glide">
 
-					</div><!-- end .glide -->
-				</section><!-- end .testimonials -->
-			</div><!-- end .wrapper -->
+							<div class="glid__track" data-glide-el="track">
+								<ul class="glide__slides">
 
-			<!-- end testimonials -->
+									<?php while ($testimonialsQuery->have_posts()) :
+										$testimonialsQuery->the_post(); ?>
+
+										<li class="glide__slide">
+											<div class="testimonial">
+												<div class="testimonial__avatar">
+													<img src="<?php echo get_theme_file_uri('/assets/images/Temoignage__avatar.png'); ?>" alt="">
+												</div>
+												<div class="testimonial__title"><?php the_title(); ?></div>
+												<div class="testimonial__text"><?php echo wp_kses(get_field('testimonial'), $allowed_html); ?></div>
+												<div class="testimonial__author"><?php echo esc_html(get_field('name')); ?> - <?php echo esc_html(get_field('profession')); ?></div>
+											</div>
+										</li>
+
+									<?php endwhile; ?>
+
+								</ul>
+							</div>
+							<div data-glide-el="controls" class="testimonials__controls">
+								<span class="testimonials__control testimonials__control--left" role="button" data-glide-dir="<"><i class="fas fa-chevron-left"></i></span>
+								<span class="testimonials__control testimonials__control--right" role="button" data-glide-dir=">"><i class="fas fa-chevron-right"></i></span>
+							</div>
+
+							<div class="glide__bullets" data-glide-el="controls[nav]">
+								<?php for ($i = 0; $i < $testimonialsQuery->post_count; $i++) : ?>
+									<button class="glide__bullet" data-glide-dir="=<?php echo $i ?>"></button>
+								<?php endfor; ?>
+							</div>
+
+						</div><!-- end .glide -->
+					</section><!-- end .testimonials -->
+				</div><!-- end .wrapper -->
+			<?php endif;
+			wp_reset_postdata(); ?>
 
 			<section class="last-posts">
 				<div class="wrapper">

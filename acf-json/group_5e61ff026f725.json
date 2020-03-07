@@ -52,7 +52,7 @@
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": 6,
+                    "rows": 8,
                     "new_lines": "wpautop"
                 },
                 {
@@ -167,7 +167,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
+                    "default_value": "Présentation",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -281,7 +281,7 @@
             "key": "field_5e6255f4d6d6e",
             "label": "Home Services",
             "name": "home_services",
-            "type": "post_object",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -290,14 +290,110 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "services"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_5e6296bc6f424",
+                    "label": "Services Title",
+                    "name": "services_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Services",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25
+                },
+                {
+                    "key": "field_5e6296e86f425",
+                    "label": "Services Select",
+                    "name": "services_select",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "services"
+                    ],
+                    "taxonomy": "",
+                    "filters": "",
+                    "elements": "",
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
+                }
+            ]
+        },
+        {
+            "key": "field_5e62931b454b9",
+            "label": "Home Testimonials",
+            "name": "home_testimonials",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_5e62934d454ba",
+                    "label": "Testimonials Title",
+                    "name": "testimonials_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Témoignages",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": 25
+                },
+                {
+                    "key": "field_5e6293c2454bb",
+                    "label": "Testimonials Select",
+                    "name": "testimonials_select",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "testimonials"
+                    ],
+                    "taxonomy": "",
+                    "filters": "",
+                    "elements": "",
+                    "min": 1,
+                    "max": 5,
+                    "return_format": "object"
+                }
+            ]
         }
     ],
     "location": [
@@ -317,5 +413,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583503199
+    "modified": 1583586225
 }
