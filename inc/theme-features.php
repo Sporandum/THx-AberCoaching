@@ -20,3 +20,7 @@ function hide_editor() {
         remove_post_type_support('page', 'editor');
     }
 }
+
+
+// Remove <p> tag around input in contact form 7 plugin
+add_filter('wpcf7_autop_or_not', '__return_false');
