@@ -24,12 +24,13 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 330px);
+    grid-template-columns: repeat(auto-fit);
     justify-content: center;
     gap: 3rem;
     padding: 1rem 0;
-
+    
     @include breakpoint(740px) {
+      grid-template-columns: repeat(auto-fit, 330px);
       .post-card:last-child {
 
         grid-column: 1 / -1;
