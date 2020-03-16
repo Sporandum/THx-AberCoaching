@@ -1,14 +1,6 @@
 .last-posts {
 
-  margin: $margin-Y__section 0;
-
-  @include breakpoint($md) {
-    padding: $margin-Y__section--md 0;
-  }
-
-  @include breakpoint($lg) {
-    padding: $margin-Y__section--lg 0;
-  }
+  @extend %section-spacing;
 
   &__bg {
     background: linear-gradient($color__primary 90%, $color__white 10%);
