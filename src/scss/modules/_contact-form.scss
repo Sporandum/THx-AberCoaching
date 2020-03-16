@@ -1,0 +1,97 @@
+.contact-form {
+
+  @extend %section-spacing;
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    color: $color__primary;
+
+
+    @include breakpoint($md) {
+      font-size: 1.25rem;
+    }
+
+    &::placeholder {
+      color: inherit;
+    }
+
+    &:focus {
+      outline-color: $color__primary--hover;
+    }
+
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template: 
+    "last-name"
+    "first-name"
+    "email"
+    "message"
+    "submit";
+    justify-content: center;
+    gap: 2rem;
+    @include breakpoint($lg) {
+      grid-template: 
+      "last-name first-name"
+      "email     email" 
+      "message   message"
+      "submit    submit" / 1fr 1fr;
+    }
+  }
+
+  &__first-name {
+    grid-area: first-name;
+  }
+  &__last-name {
+    grid-area: last-name;
+  }
+  &__email {
+    grid-area: email
+  }
+  &__message {
+    grid-area: message;
+  }
+
+  &__submit {
+    grid-area: submit;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+
+    .fa-telegram-plane {
+      color: inherit;
+      position: absolute;
+      font-size: 1.25rem;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 6rem;
+
+      @include breakpoint($lg) {
+        left: 6.5rem;
+      }
+    }
+  }
+}
+
+.wpcf7 {
+
+  &-submit {
+    @extend .btn;
+    @extend .btn--primary;
+    border: none;
+    position: relative;
+    
+    padding-right: 3.5rem;
+  }
+
+  &-not-valid-tip {
+    padding: 0.5rem 1rem 0;
+  }
+}

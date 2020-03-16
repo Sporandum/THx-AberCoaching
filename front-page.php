@@ -221,6 +221,15 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
+			<section class="contact-form">
+				<div class="wrapper">
+					<h2 class="headline headline--section">Contact</h2>
+
+					<?php echo do_shortcode('[contact-form-7 id="127" title="Formulaire de contact 1"]');  ?>
+				</div>
+
+			</section>
+
 
 		</main>
 

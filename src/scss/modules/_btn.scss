@@ -5,6 +5,7 @@
   padding: 1.125rem;
   font-size: 0.95rem;
 
+
   @include breakpoint($md) {
     font-size: 1.0625rem;
   }
@@ -12,6 +13,11 @@
   &--primary {
     background-color: $color__primary;
     color: $color__white--pale;
+
+    &:hover,
+    &:active {
+      background-color: $color__primary--hover;
+    }
   }
 
   &--center {
