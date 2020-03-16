@@ -12,7 +12,7 @@
 	<header class="site-header">
 		<div class="site-header__wrapper">
 			<div class="site-header__logo">
-				<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">
+				<a href="<?php echo site_url(); ?>"><img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="Abercoaching logo"></a>
 			</div>
 			<div id="site-header__menu-icon" class="site-header__menu-icon">
 				<div id="burger-icon" class="burger-icon">
