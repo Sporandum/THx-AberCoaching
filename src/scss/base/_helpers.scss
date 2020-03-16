@@ -4,6 +4,10 @@
   width: 100%;
   padding: 0 1rem;
   margin: 0 auto;
+
+  &--narrow {
+    max-width: 900px;
+  }
 }
 
 .section-spacing, 

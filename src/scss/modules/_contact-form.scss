@@ -1,30 +1,5 @@
 .contact-form {
 
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
-    border: none;
-    width: 100%;
-    font-size: 1rem;
-    padding: 1rem;
-    color: $color__primary;
-
-
-    @include breakpoint($md) {
-      font-size: 1.25rem;
-    }
-
-    &::placeholder {
-      color: inherit;
-    }
-
-    &:focus {
-      outline-color: $color__primary--hover;
-    }
-
-  }
-
   &__wrapper {
     display: grid;
     grid-template: 
@@ -85,7 +60,6 @@
   &-submit {
     @extend .btn;
     @extend .btn--primary;
-    border: none;
     position: relative;
     
     padding-right: 3.5rem;
