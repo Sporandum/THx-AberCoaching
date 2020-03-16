@@ -5,12 +5,12 @@
 
 
   @include breakpoint($md) {
-    margin: $margin-Y__section--md 0;
+    margin: 1.5rem 0;
   }
 
   @include breakpoint($lg) {
     grid-template-columns: 1fr 1fr;
-    margin: $margin-Y__section--lg 0;
+    margin: 2rem 0;
   }
 
   .hero__text-bloc {

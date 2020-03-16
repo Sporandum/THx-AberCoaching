@@ -1,18 +1,11 @@
 .testimonials {
 
-    position: relative;
-    max-width: 981px;
-    margin: $margin-Y__section auto;
-    overflow: hidden;
-    padding-bottom: 1rem;
+  position: relative;
+  max-width: 981px;
+  overflow: hidden;
+  padding-bottom: 1rem;
 
-    @include breakpoint($md) {
-      margin: $margin-Y__section--md auto;
-    }
-
-    @include breakpoint($lg) {
-      margin: $margin-Y__section--lg auto;
-    }
+  @extend %section-spacing;
 
   &__controls {
     display: none;
@@ -112,5 +105,3 @@
     }
   }
 }
-
-
