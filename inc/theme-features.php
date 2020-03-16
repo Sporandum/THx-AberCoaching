@@ -8,6 +8,7 @@ function abercoaching_theme_features() {
 	add_theme_support('post-thumbnails');
 
 	add_image_size('gallery', 600, 440, true);
+	add_image_size('post_card', 330, 220, true);
 }
 
 
