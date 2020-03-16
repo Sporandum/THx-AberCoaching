@@ -1,5 +1,7 @@
 .about {
 
+  @extend %section-spacing;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -8,8 +10,6 @@
     "text"
     "img"
     "btn";
-
-  @extend %section-spacing;
 
   &__headline {
     grid-area: headline;

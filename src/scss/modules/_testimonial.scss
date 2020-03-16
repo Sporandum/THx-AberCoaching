@@ -5,7 +5,15 @@
   overflow: hidden;
   padding-bottom: 1rem;
 
-  @extend %section-spacing;
+  margin: $margin-Y__section auto;
+
+  @include breakpoint($md) {
+    margin: $margin-Y__section--md auto;
+  }
+
+  @include breakpoint($lg) {
+    margin: $margin-Y__section--lg auto;
+  }
 
   &__controls {
     display: none;

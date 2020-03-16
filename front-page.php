@@ -58,7 +58,7 @@
 
 			<?php if ($about) : ?>
 				<div class="wrapper">
-					<section class="about section-spacing">
+					<section class="about">
 						<h2 class="about__headline headline headline--section"><?php echo esc_html($about->about_title); ?></h2>
 						<div class="about__img-bloc">
 							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
@@ -185,11 +185,11 @@
 
 			if ($lastPosts) : ?>
 
-				<section class="posts section-spacing">
+				<section class="last-posts">
 					<div class="wrapper">
 						<h2 class="headline headline--section">Dernier articles</h2>
 					</div>
-					<div class="posts__bg">
+					<div class="last-posts__bg">
 						<div class="wrapper">
 							<div class="post-card__container">
 								<?php while ($lastPosts->have_posts()) :
@@ -212,7 +212,7 @@
 							</div>
 
 						</div><!-- end .wrapper -->
-						<div class="posts__btn-more">
+						<div class="last-posts__btn-more">
 							<a href="<?php echo site_url('/blog'); ?>" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
 						</div>
 

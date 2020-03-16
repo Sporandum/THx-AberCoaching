@@ -1,0 +1,13 @@
+.blog {
+
+  margin: 2rem 0;
+
+  &__bg {
+    @extend .last-posts__bg;
+  }
+
+
+  &__pagination {
+    text-align: center;
+  }
+}
