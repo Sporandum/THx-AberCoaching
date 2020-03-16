@@ -6,6 +6,7 @@
   margin: 0 auto;
 }
 
+.section-spacing, 
 %section-spacing {
   margin: $margin-Y__section 0;
 
@@ -17,3 +18,4 @@
     margin: $margin-Y__section--lg 0;
   }
 }
+

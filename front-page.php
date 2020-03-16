@@ -58,7 +58,7 @@
 
 			<?php if ($about) : ?>
 				<div class="wrapper">
-					<section class="about">
+					<section class="about section-spacing">
 						<h2 class="about__headline headline headline--section"><?php echo esc_html($about->about_title); ?></h2>
 						<div class="about__img-bloc">
 							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
@@ -185,13 +185,13 @@
 
 			if ($lastPosts) : ?>
 
-				<section class="last-posts">
+				<section class="posts section-spacing">
 					<div class="wrapper">
 						<h2 class="headline headline--section">Dernier articles</h2>
 					</div>
-					<div class="last-posts__bg">
+					<div class="posts__bg">
 						<div class="wrapper">
-							<div class="last-posts__container">
+							<div class="post-card__container">
 								<?php while ($lastPosts->have_posts()) :
 									$lastPosts->the_post(); ?>
 									<div class="post-card">
@@ -212,7 +212,7 @@
 							</div>
 
 						</div><!-- end .wrapper -->
-						<div class="last-posts__btn-more">
+						<div class="posts__btn-more">
 							<a href="<?php echo site_url('/blog'); ?>" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
 						</div>
 
@@ -221,7 +221,7 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
-			<section class="contact-form">
+			<section class="contact-form section-spacing">
 				<div class="wrapper">
 					<h2 class="headline headline--section">Contact</h2>
 
