@@ -178,56 +178,49 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
-			<section class="last-posts">
-				<div class="wrapper">
-					<h2 class="headline headline--section">Dernier articles</h2>
-				</div>
-				<div class="last-posts__bg">
+			<?php $lastPosts = new WP_Query(array(
+				'posts_per_page' => 3,
+				'post_type' => 'post'
+			));
+
+			if ($lastPosts) : ?>
+
+				<section class="last-posts">
 					<div class="wrapper">
-						<div class="last-posts__container">
+						<h2 class="headline headline--section">Dernier articles</h2>
+					</div>
+					<div class="last-posts__bg">
+						<div class="wrapper">
+							<div class="last-posts__container">
+								<?php while ($lastPosts->have_posts()) :
+									$lastPosts->the_post(); ?>
+									<div class="post-card">
+										<a href="<?php the_permalink(); ?>">
 
-							<div class="post-card">
+											<div class="post-card__img">
+												<?php the_post_thumbnail('post_card'); ?>
+											</div>
 
-								<div class="post-card__img">
-									<img src="<?php echo get_theme_file_uri('/assets/images/vladimir-proskurovskiy-TNJdsXC_wtY-unsplash.jpg'); ?>" alt="">
-								</div>
+											<div class="post-card__content">
+												<h4><?php the_title(); ?></h4>
+												<p><?php echo wp_trim_words(get_the_excerpt(), 15, ' ...'); ?></p>
+											</div>
 
-								<div class="post-card__content">
-									<h4><a href="">Titre de mon post très</a></h4>
-								</div>
-
+										</a>
+									</div>
+								<?php endwhile; ?>
 							</div>
-							<div class="post-card">
 
-								<div class="post-card__img">
-									<img src="<?php echo get_theme_file_uri('/assets/images/vladimir-proskurovskiy-TNJdsXC_wtY-unsplash.jpg'); ?>" alt="">
-								</div>
-
-								<div class="post-card__content">
-									<h4><a href="">Titre de mon post très</a></h4>
-								</div>
-
-							</div>
-							<div class="post-card">
-
-								<div class="post-card__img">
-									<img src="<?php echo get_theme_file_uri('/assets/images/vladimir-proskurovskiy-TNJdsXC_wtY-unsplash.jpg'); ?>" alt="">
-								</div>
-
-								<div class="post-card__content">
-									<h4><a href="">Titre de mon post très</a></h4>
-								</div>
-
-							</div>
+						</div><!-- end .wrapper -->
+						<div class="last-posts__btn-more">
+							<a href="<?php echo site_url('/blog'); ?>" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
 						</div>
 
-					</div>
-					<div class="last-posts__btn-more">
-						<a href="" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
-					</div>
+					</div><!-- end .last-post__bg -->
+				</section><!-- end .last-posts -->
+			<?php endif;
+			wp_reset_postdata(); ?>
 
-				</div><!-- end .last-post__bg -->
-			</section><!-- end .last-posts -->
 
 		</main>
 

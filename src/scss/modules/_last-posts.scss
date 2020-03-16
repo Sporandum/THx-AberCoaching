@@ -12,6 +12,7 @@
 
   &__bg {
     background: linear-gradient($color__primary 90%, $color__white 10%);
+
     @include breakpoint(740px) {
       background: linear-gradient($color__primary 75%, $color__white 25%);
     }
@@ -28,9 +29,10 @@
     justify-content: center;
     gap: 3rem;
     padding: 1rem 0;
-    
+
     @include breakpoint(740px) {
       grid-template-columns: repeat(auto-fit, 330px);
+
       .post-card:last-child {
 
         grid-column: 1 / -1;
@@ -69,9 +71,9 @@
     padding: 2rem;
     min-height: 175px;
     border-radius: 0 0 4px 4px;
+  }
 
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
   }
 }
