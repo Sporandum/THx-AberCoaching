@@ -1,0 +1,21 @@
+.last-posts {
+
+  @extend %section-spacing;
+
+  &__bg {
+    background: linear-gradient($color__primary 90%, $color__white 10%);
+
+    @include breakpoint(740px) {
+      background: linear-gradient($color__primary 75%, $color__white 25%);
+    }
+
+    @include breakpoint(1029px) {
+      background: linear-gradient($color__primary 70%, $color__white 30%);
+
+    }
+  }
+  
+  &__btn-more {
+    margin-top: 3rem;
+  }
+}

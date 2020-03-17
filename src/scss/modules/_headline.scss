@@ -1,0 +1,48 @@
+.headline {
+  font-weight: 500;
+  margin: 1rem 0 0 0;
+
+  &--large {
+    color: $color__primary;
+    @include rfs(2.375rem);
+    margin: 2rem 0;
+  }
+
+  &--medium {
+    @include rfs(2rem);
+    margin-bottom: 2.5rem;
+  }
+
+  &--small {
+    @include rfs(1.75rem);
+    margin-bottom: 2rem;
+  }
+
+ 
+  &--section {
+    color: $color__primary;
+    @include rfs(2.375rem);
+    width: 100%;
+    margin-bottom: 1.5rem;
+    // Equal wrapper padding
+    padding: 0 1rem;
+    
+    text-align: center;
+    text-decoration: underline;
+    
+    @include breakpoint($md) {
+      margin-bottom: 4rem;
+      text-decoration: none;
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        max-width: 9vw;
+        width: 100%;
+        height: 0.125rem;
+        background: $color__primary;
+        margin: 0 0.8em;
+      }
+    }
+  }
+}

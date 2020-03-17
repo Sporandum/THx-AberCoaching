@@ -1,0 +1,14 @@
+{
+  "runtime.js": "js/runtime.js",
+  "scripts.js": "js/scripts.js",
+  "vendors~scripts.js": "js/vendors~scripts.js",
+  "wpackioEp": {
+    "scripts": {
+      "js": [
+        "js/runtime.js",
+        "js/vendors~scripts.js",
+        "js/scripts.js"
+      ]
+    }
+  }
+}

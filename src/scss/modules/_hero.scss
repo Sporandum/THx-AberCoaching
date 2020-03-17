@@ -1,0 +1,37 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+
+
+  @include breakpoint($md) {
+    margin: 1.5rem 0;
+  }
+
+  @include breakpoint($lg) {
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 0;
+  }
+
+  .hero__text-bloc {
+    max-width: 600px;
+    margin: 0 auto;
+    grid-column: 1;
+
+    @include breakpoint($lg) {
+      max-width: unset;
+      margin: 0;
+    }
+  }
+
+  .hero__img-bloc {
+    display: none;
+    grid-column: 2;
+
+    @include breakpoint($lg) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

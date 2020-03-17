@@ -1,0 +1,76 @@
+.site-header {
+  position: fixed;
+  width: 100%;
+  min-height: 4.5rem;
+  z-index: 2;
+  background: $color__white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+  @include breakpoint($md) {
+    min-height: 6rem;
+  }
+
+  &__wrapper {
+    @extend %wrapper;
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+
+    max-width: 12rem;
+
+    @include breakpoint($md) {
+      max-width: 20rem;
+    }
+  }
+
+  &__menu-icon {
+    position: relative;
+    margin-left: auto;
+
+    @include breakpoint($lg) {
+      display: none;
+    }
+  }
+
+  &__menu-content {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: $color__white;
+    transition: all 0.3s ease-out;
+    transform-origin: top;
+    transform: scaleY(0);
+
+    @include breakpoint($md) {
+      top: 6rem;
+    }
+    
+    &--is-visible {
+      transform: scaleY(1);
+      visibility: visible;
+      opacity: 1;
+      border-top: 1px solid $color__grey;
+      border-bottom: 1px solid $color__grey;
+    }
+    
+    @include breakpoint($lg) {
+      display: block;
+      position: initial;
+      margin-left: auto;
+      visibility: visible;
+      transform: scaleY(1);
+      opacity: 1;
+      background: unset;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.glide__bullets {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glide__bullet {
+
+  &--active {
+    background: $color__primary;
+  }
+}

@@ -1,4 +1,18 @@
-// Test
-import Test from './modules/Test'
+import MobileMenu from './modules/MobileMenu'
+import CurrentMenuItem from './modules/CurrentMenuItem'
+import Glide from '@glidejs/glide'
 
-new Test()
+new MobileMenu()
+
+new CurrentMenuItem('presentation')
+new CurrentMenuItem('services')
+new CurrentMenuItem('last-posts')
+new CurrentMenuItem('contact')
+
+
+// Init testimonials slider on front page
+if(document.getElementById('testimonials')) {
+  new Glide('.glide', {
+    gap: 200
+  }).mount()
+}

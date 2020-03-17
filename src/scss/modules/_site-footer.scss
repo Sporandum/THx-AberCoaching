@@ -1,0 +1,89 @@
+.site-footer {
+
+  margin-top: auto;
+
+  &__top {
+    background: $color__primary;
+    color: $color__white--pale;
+    font-size: 1.06rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  &__bottom {
+    border-top: 1px solid $color__grey;
+  }
+
+  &__wrapper {
+    @extend %wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @include breakpoint($md) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    >div:not(:last-child) {
+      padding-bottom: 1.5rem;
+    }
+
+    @include breakpoint($md) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      >div:not(:last-child) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__logo {
+
+    max-width: 16rem;
+
+    @include breakpoint($md) {
+      max-width: 20rem;
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    font-size: 3rem;
+    color: $color__primary;
+
+    svg {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    @include breakpoint($md) {
+      svg {
+        margin-left: 2rem;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 1rem 2.5rem;
+    }
+
+    @include breakpoint($md) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
