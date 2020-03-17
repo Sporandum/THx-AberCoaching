@@ -87,7 +87,7 @@ module.exports = {
 	packageFiles: [
 		'inc/**',
 		'vendor/**',
-    'dist/**',
+    'assets/**',
     'acf-json/**',
 		'*.php',
 		'*.md',
