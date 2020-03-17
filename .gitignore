@@ -109,7 +109,11 @@ typings/
 .nuxt
 
 # rollup.js default build output
-dist/
+dist/js
+dist/css
+
+# ignore package .zip
+package/*.zip
 
 # Uncomment the public line if your project uses Gatsby
 # https://nextjs.org/blog/next-9-1#public-directory-support
