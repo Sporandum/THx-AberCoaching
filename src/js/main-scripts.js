@@ -6,7 +6,7 @@ new MobileMenu()
 
 new CurrentMenuItem('presentation')
 new CurrentMenuItem('services')
-new CurrentMenuItem('last-posts')
+new CurrentMenuItem('last-posts', false)
 new CurrentMenuItem('contact')
 
 
