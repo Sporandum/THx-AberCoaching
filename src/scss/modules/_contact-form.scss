@@ -1,0 +1,71 @@
+.contact-form {
+
+  &__wrapper {
+    display: grid;
+    grid-template: 
+    "last-name"
+    "first-name"
+    "email"
+    "message"
+    "submit";
+    justify-content: center;
+    gap: 2rem;
+
+    @include breakpoint($lg) {
+      grid-template: 
+      "last-name first-name"
+      "email     email" 
+      "message   message"
+      "submit    submit" / 1fr 1fr;
+    }
+  }
+
+  &__first-name {
+    grid-area: first-name;
+  }
+  &__last-name {
+    grid-area: last-name;
+  }
+  &__email {
+    grid-area: email
+  }
+  &__message {
+    grid-area: message;
+  }
+
+  &__submit {
+    grid-area: submit;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+
+    .fa-telegram-plane {
+      color: inherit;
+      position: absolute;
+      font-size: 1.25rem;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 6rem;
+
+      @include breakpoint($lg) {
+        left: 6.5rem;
+      }
+    }
+  }
+}
+
+// contact form 7 submit button
+.wpcf7 {
+
+  &-submit {
+    @extend .btn;
+    @extend .btn--primary;
+    position: relative;
+    
+    padding-right: 3.5rem;
+  }
+
+  &-not-valid-tip {
+    padding: 0.5rem 1rem 0;
+  }
+}

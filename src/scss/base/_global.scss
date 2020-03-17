@@ -11,6 +11,11 @@
   box-sizing: inherit;
 }
 
+// pre
+pre {
+  white-space: pre-wrap;
+}
+
 // GLOBAL
 html {
   font-size: 16px;
@@ -23,9 +28,18 @@ body {
   min-height: 100vh;
   flex-direction: column;
   overflow-x: hidden;
+
   
   &.admin-bar {
     min-height: calc(100vh - 32px);
+  }
+}
+
+main {
+  padding-top: 4.5rem;
+
+  @include breakpoint($md) {
+    padding-top: 6rem;
   }
 }
 

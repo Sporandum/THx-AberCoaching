@@ -1,5 +1,7 @@
 .about {
 
+  @extend %section-spacing;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -8,15 +10,6 @@
     "text"
     "img"
     "btn";
-
-    margin: $margin-Y__section 0;
-    
-    @include breakpoint($md) {
-      margin: $margin-Y__section--md 0;
-    }
-    @include breakpoint($lg) {
-      margin: $margin-Y__section--lg 0;
-    }
 
   &__headline {
     grid-area: headline;
@@ -77,7 +70,7 @@
       grid-row: 2 / -1;
 
       img {
-        display: block;
+        max-width: 375px;
         max-height: unset;
       }
     }

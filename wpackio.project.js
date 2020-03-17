@@ -80,14 +80,14 @@ module.exports = {
 	// Won't hurt because we use PHP to automate loading
 	optimizeSplitChunks: true,
 	// Usually PHP and other files to watch and reload when changed
-	watch: ['./inc|includes/**/*.php', './*.php'],
+	watch: ['./inc/**/*.php', './*.php'],
 	// Files that you want to copy to your ultimate theme/plugin package
 	// Supports glob matching from minimatch
 	// @link <https://github.com/isaacs/minimatch#usage>
 	packageFiles: [
 		'inc/**',
 		'vendor/**',
-    'dist/**',
+    'assets/**',
     'acf-json/**',
 		'*.php',
 		'*.md',

@@ -3,27 +3,11 @@
 // Require the composer autoload for getting conflict-free access to enqueue
 require_once __DIR__ . '/vendor/autoload.php';
 
-class MyPluginInit {
-	/**
-	 * @var \WPackio\Enqueue
-	 */
-	public $enqueue;
+// WPACK.IO features init
+require get_theme_file_path('/inc/wpack-features.php');
 
-	public function __construct() {
-		// It is important that we init the Enqueue class right at the plugin/theme load time
-		$this->enqueue = new \WPackio\Enqueue( 'wpack', 'assets', '1.0.0', 'theme', __FILE__ );
-		// Enqueue a few of our entry points
-		add_action( 'wp_enqueue_scripts', [ $this, 'scripts_enqueue' ] );
-	}
+// Custom Post Types
+require get_theme_file_path('/inc/abercoaching-post-types.php');
 
-
-	public function scripts_enqueue() {
-		// Enqueue the `main` entry from `reactapp` file entry.
-		$this->enqueue->enqueue( 'js', 'scripts', [] );
-		$this->enqueue->enqueue( 'css', 'styles', [] );
-	}
-}
-
-
-// Init
-new MyPluginInit();
+// Custom theme's functions
+require get_theme_file_path('/inc/theme-features.php');

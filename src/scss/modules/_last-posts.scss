@@ -1,17 +1,10 @@
 .last-posts {
 
-  margin: $margin-Y__section 0;
-
-  @include breakpoint($md) {
-    padding: $margin-Y__section--md 0;
-  }
-
-  @include breakpoint($lg) {
-    padding: $margin-Y__section--lg 0;
-  }
+  @extend %section-spacing;
 
   &__bg {
     background: linear-gradient($color__primary 90%, $color__white 10%);
+
     @include breakpoint(740px) {
       background: linear-gradient($color__primary 75%, $color__white 25%);
     }
@@ -21,56 +14,8 @@
 
     }
   }
-
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 330px);
-    justify-content: center;
-    gap: 3rem;
-    padding: 1rem 0;
-
-    @include breakpoint(740px) {
-      .post-card:last-child {
-
-        grid-column: 1 / -1;
-        margin: 0 auto;
-      }
-    }
-
-    @include breakpoint(1118px) {
-      .post-card:last-child {
-        grid-column: auto;
-        margin: 0;
-      }
-    }
-  }
-
+  
   &__btn-more {
     margin-top: 3rem;
-  }
-}
-
-.post-card {
-
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.16);
-  background: $color__white;
-  max-width: 330px;
-  border-radius: 4px;
-
-  &__img {
-    img {
-      display: block;
-      border-radius: 4px 4px 0 0;
-    }
-  }
-
-  &__content {
-    padding: 2rem;
-    min-height: 175px;
-    border-radius: 0 0 4px 4px;
-
-    a {
-      text-decoration: none;
-    }
   }
 }

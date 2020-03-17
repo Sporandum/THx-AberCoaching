@@ -1,0 +1,51 @@
+.singular {
+  &__top-banner {
+    background-color: #333;
+  }
+
+  &__top-banner {
+    position: relative;
+    height: 200px;
+    width: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    &__img {
+
+      height: inherit;
+
+      img {
+        width: 100%;
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+
+    &__title {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 2;
+
+      @include breakpoint($md) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__content {
+    padding: 3rem 0 1rem;
+  }
+}

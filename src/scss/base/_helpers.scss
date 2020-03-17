@@ -4,4 +4,22 @@
   width: 100%;
   padding: 0 1rem;
   margin: 0 auto;
+
+  &--narrow {
+    max-width: 900px;
+  }
 }
+
+.section-spacing, 
+%section-spacing {
+  margin: $margin-Y__section 0;
+
+  @include breakpoint($md) {
+    margin: $margin-Y__section--md 0;
+  }
+
+  @include breakpoint($lg) {
+    margin: $margin-Y__section--lg 0;
+  }
+}
+
