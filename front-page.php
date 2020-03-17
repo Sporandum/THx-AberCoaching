@@ -135,7 +135,7 @@
 			if ($testimonialsQuery) : ?>
 
 				<div class="wrapper">
-					<section class="testimonials">
+					<section id="testimonials" class="testimonials">
 						<h2 class="headline headline--section"><?php echo esc_html($testimonials['testimonials_title']); ?></h2>
 
 						<div class="glide">

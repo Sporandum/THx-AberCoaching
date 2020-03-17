@@ -10,8 +10,9 @@ new CurrentMenuItem('last-posts')
 new CurrentMenuItem('contact')
 
 
-
-
-new Glide('.glide', {
-  gap: 200
-}).mount()
+// Init testimonials slider on front page
+if(document.getElementById('testimonials')) {
+  new Glide('.glide', {
+    gap: 200
+  }).mount()
+}
