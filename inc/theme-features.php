@@ -11,6 +11,7 @@ function abercoaching_theme_features() {
 	add_image_size('gallery', 600, 440, true);
 	add_image_size('post_card', 330, 220, true);
 	add_image_size('post_banner', 1000, 200, true);
+
 }
 
 

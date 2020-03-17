@@ -38,3 +38,10 @@
     }
   }
 }
+
+// current menu item
+.current-menu-item {
+  a {
+    color: $color__secondary;
+  }
+}

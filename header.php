@@ -24,10 +24,10 @@
 			<div id="site-header__menu-content" class="site-header__menu-content">
 				<nav class="primary-nav">
 					<ul>
-						<li><a href="#">Présentation</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
+						<li id="presentation-link"><a href="<?php echo site_url('/#presentation'); ?>">Présentation</a></li>
+						<li id="services-link"><a href="<?php echo site_url('/#services'); ?>">Services</a></li>
+						<li id="blog-link" <?php echo get_post_type() === 'post' ? 'class="current-menu-item"' : ''; ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
+						<li id="contact-link"><a href="<?php echo site_url('/#contact') ?>">Contact</a></li>
 					</ul>
 				</nav>
 			</div>

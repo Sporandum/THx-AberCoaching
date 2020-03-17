@@ -58,7 +58,7 @@
 
 			<?php if ($about) : ?>
 				<div class="wrapper">
-					<section class="about">
+					<section id="presentation" class="about" data-matching-link="#presentation-link">
 						<h2 class="about__headline headline headline--section"><?php echo esc_html($about->about_title); ?></h2>
 						<div class="about__img-bloc">
 							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
@@ -77,7 +77,7 @@
 
 				<div class="services__bg-color">
 					<div class="wrapper">
-						<section class="services">
+						<section id="services" class="services" data-matching-link="#services-link">
 							<h2 class="headline headline--section"><?php echo esc_html($services['services_title']); ?></h2>
 
 							<div class="services__container">
@@ -185,7 +185,7 @@
 
 			if ($lastPosts) : ?>
 
-				<section class="last-posts">
+				<section id="last-posts" class="last-posts" data-matching-link="#blog-link">
 					<div class="wrapper">
 						<h2 class="headline headline--section">Dernier articles</h2>
 					</div>
@@ -221,7 +221,7 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
-			<section class="contact-form section-spacing">
+			<section id="contact" class="contact-form section-spacing" data-matching-link="#contact-link">
 				<div class="wrapper wrapper--narrow">
 					<h2 class="headline headline--section">Contact</h2>
 
