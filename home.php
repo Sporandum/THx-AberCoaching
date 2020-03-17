@@ -1,13 +1,13 @@
 <?php
 get_header();
 ?>
-<main class="blog">
+<main class="blog-page">
 
 	<div class="wrapper">
 		<h1 class="headline headline--section">Blog</h1>
 	</div>
 
-	<div class="blog__bg">
+	<div class="blog-page__bg">
 		<div class="wrapper">
 			<div class="post-card__container">
 
@@ -31,7 +31,7 @@ get_header();
 				<?php endwhile;
 				endif; ?>
 			</div><!-- end .post-card__container -->
-			<div class="blog__pagination">
+			<div class="blog-page__pagination">
 				<?php the_posts_navigation(); ?>
 			</div>
 
