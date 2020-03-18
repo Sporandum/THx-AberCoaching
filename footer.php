@@ -8,7 +8,7 @@
 	<div class="site-footer__middle">
 		<div class="site-footer__wrapper">
 			<div class="site-footer__logo">
-				<img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="">
+				<a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="Abercoaching logo"></a>
 			</div>
 			<div class="site-footer__social-icons">
 				<a href="#"><i class="fab fa-linkedin"></i></a>

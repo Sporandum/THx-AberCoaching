@@ -9,7 +9,7 @@ if (post_password_required()) {
 
 	<?php if (have_comments()) : 
 		$commentsNumber = get_comments_number(); ?>
-		<p><strong><?php echo $commentsNumber; ?></strong> commentaire<?php $commentsNumber > 1 ? 's' : ''; ?> pour <?php the_title('<strong>', '</strong>'); ?></p>
+		<p><strong><?php echo esc_html($commentsNumber); ?></strong> commentaire<?php $commentsNumber > 1 ? 's' : ''; ?> pour <?php the_title('<strong>', '</strong>'); ?></p>
 
 		<?php 
 			wp_list_comments(); ?>
