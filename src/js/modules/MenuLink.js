@@ -1,13 +1,12 @@
 import { throttle } from 'lodash'
 
-class CurrentMenuItem {
-  constructor(sectionID, onClick = true) {
+class MenuLink {
+  constructor(sectionID, isScrollTarget = true) {
     this.sectionID = sectionID
     this.sectionEl = this.getSectionEl()
     this.sectionTitleEl = this.getSectionTitleEl()
     this.matchingLink = this.getMatchingLink()
-
-    this.onClick = onClick
+    this.isScrollTarget = isScrollTarget
     this.menuHeight = 96
     this.elState = false
     this.events()
@@ -16,7 +15,8 @@ class CurrentMenuItem {
   events() {
     if (this.sectionEl && this.matchingLink) {
       document.addEventListener('scroll', throttle(() => this.runOnScroll(), 200))
-      if (this.onClick) {
+      if (this.isScrollTarget) {
+        window.addEventListener('load', () => this.onDocumentLoad())
         this.matchingLink.addEventListener('click', e => this.onClickOnLink(e))
       }
     }
@@ -65,10 +65,23 @@ class CurrentMenuItem {
     }
   }
 
+  scrollToLink() {
+    window.scrollTo(0, this.sectionTitleEl.offsetTop - this.menuHeight)
+  }
+
   onClickOnLink(e) {
     e.preventDefault()
-    window.scrollTo(0, this.sectionTitleEl.offsetTop - this.menuHeight)
+    this.scrollToLink()
+    window.history.replaceState('', this.sectionID , window.location.origin + '/#' + this.sectionID)
+  }
+  
+  onDocumentLoad() {
+    let seekedUrl = window.location.origin + '/#' + this.sectionID
+
+    if (seekedUrl === window.location.href) {
+      this.scrollToLink()
+    } 
   }
 }
 
-export default CurrentMenuItem
+export default MenuLink

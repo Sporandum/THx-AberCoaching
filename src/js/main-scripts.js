@@ -1,13 +1,13 @@
 import MobileMenu from './modules/MobileMenu'
-import CurrentMenuItem from './modules/CurrentMenuItem'
+import MenuLink from './modules/MenuLink'
 import Glide from '@glidejs/glide'
 
 new MobileMenu()
 
-new CurrentMenuItem('presentation')
-new CurrentMenuItem('services')
-new CurrentMenuItem('last-posts', false)
-new CurrentMenuItem('contact')
+new MenuLink('presentation')
+new MenuLink('services')
+new MenuLink('last-posts', false)
+new MenuLink('contact')
 
 
 // Init testimonials slider on front page
