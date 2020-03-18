@@ -7,8 +7,9 @@ class MenuLink {
     this.sectionTitleEl = this.getSectionTitleEl()
     this.matchingLink = this.getMatchingLink()
     this.isScrollTarget = isScrollTarget
-    this.menuHeight = 96
-    this.elState = false
+    this.menuHeight = 100
+    this.menuOffset = this.menuHeight * 1.5
+    this.linkIsActive = false
     this.events()
   }
   // Events
@@ -21,7 +22,6 @@ class MenuLink {
       }
     }
   }
-
 
   // Methods
   getSectionEl() {
@@ -46,20 +46,19 @@ class MenuLink {
 
   runOnScroll() {
     let elScrollY = this.sectionEl.getBoundingClientRect().y
-    let elScrollYLimit = (this.sectionEl.getBoundingClientRect().height - this.menuHeight) * -1
+    let elScrollYLimit = (this.sectionEl.getBoundingClientRect().height - this.menuOffset) * -1
     // console.log(`${this.sectionID} : RUN`)
 
-
-    if (elScrollY < this.menuHeight && elScrollY > elScrollYLimit && !this.elState) {
+    if (elScrollY < this.menuOffset && elScrollY > elScrollYLimit && !this.linkIsActive) {
       this.matchingLink.classList.add('current-menu-item')
-      this.elState = true
+      this.linkIsActive = true
       // console.log(`${this.sectionID} : ON`)
     }
 
-    if (elScrollY > this.menuHeight || elScrollY < elScrollYLimit) {
-      if (this.elState) {
+    if (elScrollY > this.menuOffset || elScrollY < elScrollYLimit) {
+      if (this.linkIsActive) {
         this.matchingLink.classList.remove('current-menu-item')
-        this.elState = false
+        this.linkIsActive = false
         // console.log(`${this.sectionID} : OFF`)
       }
     }
