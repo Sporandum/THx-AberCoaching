@@ -21,8 +21,11 @@
 			<ul class="site-footer__links">
 				<li><a href="<?php echo get_privacy_policy_url(); ?>">Mentions Légales</a></li>
 				<li><a href="mailto:contact@abercoaching.com" target="_blank">contact@abercoaching.com</a></li>
-				<?php $creditSitesPage = get_page_by_path('credits-site'); ?>
-				<li><a href="<?php the_permalink($creditSitesPage); ?>"><?php echo esc_html(get_the_title($creditSitesPage)); ?></a></li>
+				<?php
+				$creditSitesPage = get_page_by_path('credits-site');
+				if (get_post_status($creditSitesPage) === 'publish') : ?>
+					<li><a href="<?php the_permalink($creditSitesPage); ?>"><?php echo esc_html(get_the_title($creditSitesPage)); ?></a></li>
+				<?php endif; ?>
 			</ul>
 		</div>
 	</div>
