@@ -48,7 +48,7 @@
 							</p>
 						</div>
 						<div class="hero__img-bloc">
-							<img src="<?php echo get_theme_file_uri('/assets/images/hero__img.png'); ?>" alt="Illustration de personnes travaillant ensemble">
+							<img src="<?php echo get_theme_file_uri('/assets/images/Hero__img.png'); ?>" alt="Illustration de personnes travaillant ensemble">
 						</div>
 					</section><!-- end .hero -->
 				</div><!-- end .wrapper -->
