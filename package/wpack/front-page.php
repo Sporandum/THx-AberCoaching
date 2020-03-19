@@ -186,7 +186,7 @@
 
 							<div class="glide__bullets" data-glide-el="controls[nav]">
 								<?php for ($i = 0; $i < $testimonialsQuery->post_count; $i++) : ?>
-									<button class="glide__bullet" data-glide-dir="=<?php echo $i ?>"></button>
+									<button class="glide__bullet" data-glide-dir="=<?php echo $i ?>"><span class="sr-only"><?php echo "Acceder au temoignage n° " . ($i + 1); ?></span></button>
 								<?php endfor; ?>
 							</div>
 
