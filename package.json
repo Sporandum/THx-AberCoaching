@@ -1,6 +1,6 @@
 {
   "name": "wpack",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "devDependencies": {
     "@wpackio/scripts": "^4.3.0",
@@ -11,7 +11,7 @@
     "bootstrap": "wpackio-scripts bootstrap",
     "build": "wpackio-scripts build",
     "start": "wpackio-scripts start",
-    "archive": "wpackio-scripts pack"
+    "archive": "wpackio-scripts build && wpackio-scripts pack"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
