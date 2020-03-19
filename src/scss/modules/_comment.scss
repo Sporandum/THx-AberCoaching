@@ -87,37 +87,4 @@
       margin: 0;
     }
   }
-
-  @include breakpoint($lg) {
-    display: grid;
-    grid-template: 
-    "infos   infos"
-    "author  comment"
-    "email   comment"
-    "cookies cookies"
-    "submit  submit" / 1fr 1fr;
-    column-gap: 2rem;
-
-    .comment-notes {
-      grid-column: 1 / -1;
-    }
-    .comment-form-comment {
-      grid-area: comment;
-      margin-bottom: 0;
-    }
-    .comment-form-cookies-consent {
-      grid-area: cookies;
-      margin-top: 2rem;
-    }
-    .comment-form-author {
-      grid-area: author;
-    }
-    .comment-form-email {
-      grid-area: email;
-    }
-    .form-submit {
-      grid-area: submit;
-      margin-top: 0;
-    }
-  }
 }

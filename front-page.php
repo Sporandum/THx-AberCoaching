@@ -4,41 +4,55 @@
 	while (have_posts()) :
 		the_post();
 
+		// Hero ACF
 		$hero = (object) get_field('home_page_hero');
+		// Gallery ACF
 		$gallery = get_field('home_page_gallery');
+		// About ACF
 		$about = (object) get_field('home_page_about');
+		// Services ACF
 		$services = get_field('home_services');
 		$servicesID = [];
-		foreach ($services['services_select'] as $service) {
-			$servicesID[] = $service->ID;
+		if (!empty($services)) {
+			foreach ($services['services_select'] as $service) {
+				$servicesID[] = $service->ID;
+			}
 		}
+		// Testimonials ACF
 		$testimonials = get_field('home_testimonials');
 		$testimonialsID = [];
-		foreach ($testimonials['testimonials_select'] as $testimonial) {
-			$testimonialsID[] = $testimonial->ID;
+		if (!empty($testimonials)) {
+			foreach ($testimonials['testimonials_select'] as $testimonial) {
+				$testimonialsID[] = $testimonial->ID;
+			}
 		}
-
+		// Allowed html tag in wp_kses functions
 		$allowed_html = array(
-			'br' => array()
+			'br' => array(),
+			'p' => array(),
+			'strong' => array(),
+			'em' => array()
 		);
 ?>
 
 		<main class="home">
 
-			<div class="wrapper">
-				<section class="hero">
-					<div class="hero__text-bloc generic-content">
-						<h1 class="headline headline--large"><?php echo wp_kses($hero->hero_title, $allowed_html); ?></h1>
-						<?php echo $hero->hero_text; ?>
-						<p>
-							<a href="<?php echo esc_url($hero->hero_btn['hero_btn_link']); ?>" class="btn btn--primary btn--center"><?php echo esc_html($hero->hero_btn['hero_btn_title']); ?></a>
-						</p>
-					</div>
-					<div class="hero__img-bloc">
-						<img src="<?php echo get_theme_file_uri('/assets/images/hero__img.png'); ?>" alt="">
-					</div>
-				</section><!-- end .hero -->
-			</div><!-- end .wrapper -->
+			<?php if ($hero) : ?>
+				<div class="wrapper">
+					<section class="hero">
+						<div class="hero__text-bloc generic-content">
+							<h1 class="headline headline--large"><?php echo wp_kses($hero->hero_title, $allowed_html); ?></h1>
+							<?php echo wp_kses($hero->hero_text, $allowed_html); ?>
+							<p>
+								<a href="<?php echo esc_url($hero->hero_btn['hero_btn_link']); ?>" class="btn btn--primary btn--center"><?php echo esc_html($hero->hero_btn['hero_btn_title']); ?></a>
+							</p>
+						</div>
+						<div class="hero__img-bloc">
+							<img src="<?php echo get_theme_file_uri('/assets/images/hero__img.png'); ?>" alt="Illustration de personnes travaillant ensemble">
+						</div>
+					</section><!-- end .hero -->
+				</div><!-- end .wrapper -->
+			<?php endif; ?>
 
 			<?php if ($gallery) : ?>
 				<div class="banner">
@@ -61,11 +75,11 @@
 					<section id="presentation" class="about" data-matching-link="#presentation-link">
 						<h2 class="about__headline headline headline--section"><?php echo esc_html($about->about_title); ?></h2>
 						<div class="about__img-bloc">
-							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="">
+							<img src="<?php echo esc_url($about->about_picture['sizes']['medium_large']); ?>" alt="<?php echo esc_attr($about->about_picture['alt']); ?>">
 						</div>
 						<h3 class="about__name headline headline--medium"><?php echo esc_html($about->about_name); ?></h3>
 						<div class="about__text-bloc generic-content">
-							<?php echo $about->about_excerpt; ?>
+							<?php echo wp_kses($about->about_excerpt, $allowed_html); ?>
 						</div>
 						<a href="<?php echo esc_url($about->about_page); ?>" class="about__btn btn btn--primary"><?php echo esc_html($about->about_btn); ?></a>
 					</section><!-- end .about -->
@@ -82,7 +96,9 @@
 
 							<div class="services__container">
 
-								<?php $serviceQuery = new WP_Query(array(
+								<?php
+								// Custom WP_Query for Services
+								$serviceQuery = new WP_Query(array(
 									'posts_per_page' => -1,
 									'post_type' => 'services',
 									'post__in' => $servicesID,
@@ -125,7 +141,9 @@
 			<?php endif; ?>
 
 
-			<?php $testimonialsQuery = new WP_Query(array(
+			<?php
+			// Custom WP_Query for Testimonials
+			$testimonialsQuery = new WP_Query(array(
 				'posts_per_page' => -1,
 				'post_type' => 'testimonials',
 				'post__in' => $testimonialsID,
@@ -178,7 +196,9 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
-			<?php $lastPosts = new WP_Query(array(
+			<?php
+			// Custom WP_Query for Last Posts
+			$lastPosts = new WP_Query(array(
 				'posts_per_page' => 3,
 				'post_type' => 'post'
 			));
@@ -203,7 +223,7 @@
 
 											<div class="post-card__content">
 												<h4><?php the_title(); ?></h4>
-												<p><?php echo wp_trim_words(get_the_excerpt(), 15, ' ...'); ?></p>
+												<p><?php echo wp_kses(wp_trim_words(get_the_excerpt(), 15, ' ...'), $allowed_html); ?></p>
 											</div>
 
 										</a>
@@ -213,7 +233,7 @@
 
 						</div><!-- end .wrapper -->
 						<div class="last-posts__btn-more">
-							<a href="<?php echo site_url('/blog'); ?>" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
+							<a href="<?php echo esc_url(site_url('/blog')); ?>" class="btn btn--primary btn--center">Voir plus d'articles <i class="fas fa-plus"></i></a>
 						</div>
 
 					</div><!-- end .last-post__bg -->
@@ -221,15 +241,15 @@
 			<?php endif;
 			wp_reset_postdata(); ?>
 
+			<?php if (get_field('home_contact_cf7')) : ?>
 			<section id="contact" class="contact-form section-spacing" data-matching-link="#contact-link">
 				<div class="wrapper wrapper--narrow">
 					<h2 class="headline headline--section">Contact</h2>
-
-					<?php echo do_shortcode('[contact-form-7 id="127" title="Formulaire de contact 1"]');  ?>
+					<?php the_field('home_contact_cf7');  ?>
 				</div>
 
 			</section>
-
+			<?php endif; ?>
 
 		</main>
 
