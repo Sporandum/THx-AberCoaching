@@ -1,8 +1,8 @@
 {
   "runtime.js": "css/runtime-e189268d.js",
   "runtime.js.map": "css/runtime-e189268d.js.map",
-  "styles.css": "css/styles-fdf3775d.css",
-  "styles.css.map": "css/styles-fdf3775d.css.map",
+  "styles.css": "css/styles-dd2b55f2.css",
+  "styles.css.map": "css/styles-dd2b55f2.css.map",
   "styles.js": "css/styles-cbb6f72d.js",
   "styles.js.map": "css/styles-cbb6f72d.js.map",
   "vendors~styles.js": "css/vendors~styles-a0f60e3d.js",
@@ -20,10 +20,10 @@
         "css/styles-cbb6f72d.js.map"
       ],
       "css": [
-        "css/styles-fdf3775d.css"
+        "css/styles-dd2b55f2.css"
       ],
       "css.map": [
-        "css/styles-fdf3775d.css.map"
+        "css/styles-dd2b55f2.css.map"
       ]
     }
   }
