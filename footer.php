@@ -11,17 +11,18 @@
 				<a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo get_theme_file_uri('/assets/images/logo_abercoaching_inline.png'); ?>" alt="Abercoaching logo"></a>
 			</div>
 			<div class="site-footer__social-icons">
-				<a href="#"><i class="fab fa-linkedin"></i></a>
-				<a href="#"><i class="fab fa-facebook-square"></i></a>
+				<a href="https://www.linkedin.com/in/annaszeremeta/" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<a href="https://www.facebook.com/abercoaching" target="_blank"><i class="fab fa-facebook-square"></i></a>
 			</div>
 		</div>
 	</div>
 	<div class="site-footer__bottom">
 		<div class="site-footer__wrapper">
 			<ul class="site-footer__links">
-				<li><a href="#">Mentions Légales</a></li>
-				<li><a href="#">contact@abercoaching.com</a></li>
-				<li><a href="#">Crédits site</a></li>
+				<li><a href="<?php echo get_privacy_policy_url(); ?>">Mentions Légales</a></li>
+				<li><a href="mailto:contact@abercoaching.com" target="_blank">contact@abercoaching.com</a></li>
+				<?php $creditSitesPage = get_page_by_path('credits-site'); ?>
+				<li><a href="<?php the_permalink($creditSitesPage); ?>"><?php echo esc_html(get_the_title($creditSitesPage)); ?></a></li>
 			</ul>
 		</div>
 	</div>
