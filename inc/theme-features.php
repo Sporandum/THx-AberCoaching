@@ -19,7 +19,7 @@ function abercoaching_theme_features() {
 add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
 
-    if($_GET['post'] == get_option('page_on_front')){ 
+    if(!empty($_GET['post']) && $_GET['post'] == get_option('page_on_front')){ 
         remove_post_type_support('page', 'editor');
     }
 }

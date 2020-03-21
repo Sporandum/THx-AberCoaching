@@ -6,6 +6,7 @@ function abercoaching_post_types() {
 		'public' => true,
 		'menu_icon' => 'dashicons-format-aside',
 		'show_in_rest' => true, // For use block editor
+		'supports' => array('title', 'editor', 'thumbnail'),
 		'labels' => array(
 			'name' => 'Services',
 			'add_new_item' => 'Ajouter un service',
