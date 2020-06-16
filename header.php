@@ -24,7 +24,7 @@
 			<div id="site-header__menu-content" class="site-header__menu-content">
 				<nav class="primary-nav">
 					<ul>
-						<li id="presentation-link"><a href="<?php echo esc_url(site_url('/#presentation')); ?>">Présentation</a></li>
+						<li id="presentation-link"><a href="<?php echo esc_url(site_url('/#presentation')); ?>">Nos Missions</a></li>
 						<li id="services-link"><a href="<?php echo esc_url(site_url('/#services')); ?>">Services</a></li>
 						<li id="blog-link" <?php echo get_post_type() === 'post' ? 'class="current-menu-item"' : ''; ?>><a href="<?php echo esc_url(site_url('/blog')); ?>">Blog</a></li>
 						<li id="contact-link"><a href="<?php echo esc_url(site_url('/#contact')); ?>">Contact</a></li>
