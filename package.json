@@ -19,7 +19,7 @@
     "@wpackio/entrypoint": "^4.3.0",
     "breakpoint-sass": "^2.7.1",
     "dotenv": "^8.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "normalize.css": "^8.0.1",
     "rfs": "^9.0.2"
   }
