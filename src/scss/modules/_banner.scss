@@ -9,9 +9,15 @@
   }
 
   &__image {
+    display: flex;
     max-width: 100%;
+    width: 300px;
     min-width: 300px;
     margin: 0 0.5rem;
+
+    & img {
+      object-fit: cover;
+    }
   }
 
 }
